@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Plugin.Media;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace XamarinVisionBoilerplate
@@ -16,6 +13,15 @@ namespace XamarinVisionBoilerplate
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            Plugin.Media.Abstractions.StoreCameraMediaOptions options = new Plugin.Media.Abstractions.StoreCameraMediaOptions();
+
+            var image = await CrossMedia.Current.TakePhotoAsync(options);
+
+            pic.Source = image.Path;
         }
     }
 }

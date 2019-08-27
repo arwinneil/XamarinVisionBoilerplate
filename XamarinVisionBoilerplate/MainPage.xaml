@@ -6,11 +6,14 @@
              mc:Ignorable="d"
              x:Class="XamarinVisionBoilerplate.MainPage">
 
+
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Button Text="Take Picture" Clicked="Button_Clicked" Margin="15,5,15,5"></Button>
+
+        <Image x:Name="picture" VerticalOptions="Fill" Margin="30" ></Image>
+
+        <Label x:Name="prediction" Text="Prediction" FontSize="Large"></Label>
     </StackLayout>
 
 </ContentPage>
